@@ -11,9 +11,28 @@ const head = (list) => {
 const tail = (list) => {
     
     if(list == null || list === undefined || list == '') 
-        return null;
+        return [];
     else{
         return list.slice(1);
     }   
 }
-module.exports = {head , tail};
+
+const map = (map,fun) => {
+    if(map == null || map === undefined || map == '') 
+        return [];
+    else{
+        switch (fun) {
+            case 'cube':
+              cube = (x) => (x * x * x);
+              map=map.map(cube)
+              break;
+            case 'identity':
+                identity = (x) => x;
+                map=map.map(identity);
+              break;
+    }
+    return map;
+}
+}
+
+module.exports = {head , tail, map};
