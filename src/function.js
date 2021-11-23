@@ -35,4 +35,14 @@ const map = (map,fun) => {
 }
 }
 
-module.exports = {head , tail, map};
+const filter = (list, expression) => {
+    
+    if(list == null || list === undefined || list == '') 
+        return [];
+    else{
+        return list.filter(expression);
+    }
+    
+}
+
+module.exports = {head , tail, map, filter};

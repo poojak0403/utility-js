@@ -35,4 +35,29 @@ describe('map',()=>{
     it('map([1,2,3], cube) should give [1,8,27]',() =>{
         expect(collectionFunction.map([1,2,3], 'cube')).toEqual([1,8,27]);
     })
+
+    // todo fix below test 
+    // it('map([a{x : 10}],someObject => someObject.x + 1)',() => {
+    //     expect(collectionFunction.map([a{x : 10}],someObject => someObject.x + 1)).toEqual([1,8,27]);
+    // })
+})
+
+describe('filter',()=>{
+
+    it('filter([], x => true) should be []',() =>{
+        expect(collectionFunction.filter([], x => true)).toEqual([]);
+    })
+
+    it('filter([], x => true) should be [1,2,3]',() =>{
+        expect(collectionFunction.filter([1,2,3], x => true)).toEqual([1,2,3]);
+    })
+
+    it('filter([], x => false) should be []',() =>{
+        expect(collectionFunction.filter([1,2,3], x => false)).toEqual([]);
+    })
+
+    it('filter([1,2,3],x => x > 1) should give [2,3]',() =>{
+        expect(collectionFunction.filter([1,2,3], x => x > 1)).toEqual([2,3]);
+    })
+
 })
